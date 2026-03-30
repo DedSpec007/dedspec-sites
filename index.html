@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DedSpec</title>
   <style>
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -12,21 +14,31 @@
       color: #e2e8f0;
     }
 
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(2,6,23,0.9);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
+    }
+
     header {
       text-align: center;
-      padding: 80px 20px;
+      padding: 100px 20px;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+    h1 { font-size: 3rem; }
 
-    p {
-      max-width: 600px;
-      margin: auto;
-      opacity: 0.9;
-    }
+    p { max-width: 600px; margin: auto; opacity: 0.9; }
 
     .btn {
       display: inline-block;
@@ -50,10 +62,7 @@
       text-align: center;
     }
 
-    h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
+    h2 { margin-bottom: 20px; }
 
     .grid {
       display: grid;
@@ -68,12 +77,22 @@
       padding: 25px;
       border-radius: 15px;
       transition: 0.3s;
-      box-shadow: 0 0 0 transparent;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     footer {
@@ -86,13 +105,22 @@
 </head>
 <body>
 
-<header>
+<nav>
+  <div><b>DedSpec</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#apps">Apps</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="fade">
   <h1>DedSpec</h1>
-  <p>Building modern, simple and powerful software solutions for everyone.</p>
-  <a class="btn" href="mailto:dedspec007@gmail.com">Contact Support</a>
+  <p>Building modern, simple and powerful software solutions.</p>
+  <a class="btn" href="https://mail.google.com/mail/?view=cm&to=dedspec007@gmail.com">Contact Support</a>
 </header>
 
-<section>
+<section id="about" class="fade">
   <h2>What We Do</h2>
   <div class="grid">
     <div class="card">
@@ -110,7 +138,7 @@
   </div>
 </section>
 
-<section>
+<section id="apps" class="fade">
   <h2>Our Apps</h2>
   <div class="grid">
     <div class="card">
@@ -120,15 +148,27 @@
   </div>
 </section>
 
-<section>
-  <h2>Privacy Policy</h2>
-  <p>We respect your privacy and handle your data responsibly.</p>
-  <a class="btn" href="privacy.html">View Policy</a>
+<section id="contact" class="fade">
+  <h2>Contact</h2>
+  <p>Email: dedspec007@gmail.com</p>
+  <a class="btn" href="privacy.html">Privacy Policy</a>
 </section>
 
 <footer>
   © 2026 DedSpec. All rights reserved.
 </footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
