@@ -8,38 +8,77 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      background: linear-gradient(135deg, #0f172a, #020617);
       color: #e2e8f0;
-      text-align: center;
     }
+
     header {
-      padding: 60px 20px;
+      text-align: center;
+      padding: 80px 20px;
     }
-    h1 { font-size: 3rem; }
-    p { max-width: 600px; margin: auto; }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 600px;
+      margin: auto;
+      opacity: 0.9;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
+      margin-top: 25px;
+      padding: 14px 28px;
       background: #38bdf8;
-      color: #0f172a;
+      color: #020617;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
+      transition: 0.3s;
     }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: scale(1.05);
+    }
+
     section {
-      padding: 50px 20px;
-      border-top: 1px solid #334155;
+      padding: 60px 20px;
+      text-align: center;
     }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
     .card {
       background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      margin: 20px auto;
-      max-width: 400px;
+      padding: 25px;
+      border-radius: 15px;
+      transition: 0.3s;
+      box-shadow: 0 0 0 transparent;
     }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
     footer {
-      padding: 20px;
+      text-align: center;
+      padding: 30px;
       font-size: 0.9rem;
       color: #94a3b8;
     }
@@ -49,27 +88,42 @@
 
 <header>
   <h1>DedSpec</h1>
-  <p>We build simple, powerful, and reliable software solutions.</p>
+  <p>Building modern, simple and powerful software solutions for everyone.</p>
   <a class="btn" href="mailto:dedspec007@gmail.com">Contact Support</a>
 </header>
 
 <section>
-  <h2>About Us</h2>
-  <p>DedSpec focuses on creating clean, efficient, and user-friendly software for everyday needs.</p>
+  <h2>What We Do</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Clean Design</h3>
+      <p>Minimal and user-friendly interfaces.</p>
+    </div>
+    <div class="card">
+      <h3>Performance</h3>
+      <p>Fast and optimized applications.</p>
+    </div>
+    <div class="card">
+      <h3>Reliability</h3>
+      <p>Stable apps you can trust daily.</p>
+    </div>
+  </div>
 </section>
 
 <section>
   <h2>Our Apps</h2>
-  <div class="card">
-    <h3>Coming Soon 🚀</h3>
-    <p>Our first app will be available on Google Play soon.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Coming Soon 🚀</h3>
+      <p>Stay tuned for our first release on Google Play.</p>
+    </div>
   </div>
 </section>
 
 <section>
   <h2>Privacy Policy</h2>
-  <p>Read our privacy policy to understand how we handle your data.</p>
-  <a class="btn" href="privacy.html">View Privacy Policy</a>
+  <p>We respect your privacy and handle your data responsibly.</p>
+  <a class="btn" href="privacy.html">View Policy</a>
 </section>
 
 <footer>
