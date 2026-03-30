@@ -10,22 +10,15 @@
       font-family: Arial, sans-serif;
       background: #0f172a;
       color: #e2e8f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       text-align: center;
     }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    header {
+      padding: 60px 20px;
     }
-    p {
-      font-size: 1.2rem;
-      max-width: 500px;
-    }
+    h1 { font-size: 3rem; }
+    p { max-width: 600px; margin: auto; }
     .btn {
+      display: inline-block;
       margin-top: 20px;
       padding: 12px 24px;
       background: #38bdf8;
@@ -34,22 +27,54 @@
       border-radius: 8px;
       font-weight: bold;
     }
+    section {
+      padding: 50px 20px;
+      border-top: 1px solid #334155;
+    }
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
     footer {
-      position: absolute;
-      bottom: 20px;
+      padding: 20px;
       font-size: 0.9rem;
       color: #94a3b8;
     }
   </style>
 </head>
 <body>
+
+<header>
   <h1>DedSpec</h1>
   <p>We build simple, powerful, and reliable software solutions.</p>
-
   <a class="btn" href="mailto:dedspec007@gmail.com">Contact Support</a>
+</header>
 
-  <footer>
-    © 2026 DedSpec. All rights reserved.
-  </footer>
+<section>
+  <h2>About Us</h2>
+  <p>DedSpec focuses on creating clean, efficient, and user-friendly software for everyday needs.</p>
+</section>
+
+<section>
+  <h2>Our Apps</h2>
+  <div class="card">
+    <h3>Coming Soon 🚀</h3>
+    <p>Our first app will be available on Google Play soon.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Privacy Policy</h2>
+  <p>Read our privacy policy to understand how we handle your data.</p>
+  <a class="btn" href="privacy.html">View Privacy Policy</a>
+</section>
+
+<footer>
+  © 2026 DedSpec. All rights reserved.
+</footer>
+
 </body>
 </html>
